@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="my_robot_world">
+
+    <!-- 🌞 Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- 🌍 Ground -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- 🧱 Wall 1 -->
+    <model name="wall_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 0.2 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 0.2 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>2 2 0.5 0 0 0</pose>
+    </model>
+
+    <!-- 🧱 Wall 2 -->
+    <model name="wall_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 5 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 5 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>-2 0 0.5 0 0 0</pose>
+    </model>
+
+    <!-- 🟦 Obstacle Box -->
+    <model name="box_obstacle">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>1 -2 0.5 0 0 0</pose>
+    </model>
+
+  </world>
+</sdf>
